@@ -122,5 +122,22 @@ Node root;
             postorder(r.right);
             System.out.print(r.data +" ");
         }
-    }       
+    }   
+    
+    /**
+     * Method size to check the size of the BST
+     * If root is null then the BST is empty and will return 0
+     * We add the right and the left child and the root
+     */
+    public void size() {
+		System.out.println("\nThe size of the tree is: " + sizeAll(root));
+	}
+	
+	public int sizeAll(Node root) {
+		
+		if (root == null)
+			return 0;
+		
+		return sizeAll(root.left) + sizeAll(root.right) + 1;
+	}
 }
