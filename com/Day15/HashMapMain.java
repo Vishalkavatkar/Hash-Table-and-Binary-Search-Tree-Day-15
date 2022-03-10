@@ -14,9 +14,9 @@ public class HashMapMain {
 	 * The get method will check and return a value. We will increment the value then
 	 * Then we add the key and value in the Hashmap
 	 */
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		
-		String string = "To be or not to be";
+		String string = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
 		String[] words = string.toLowerCase().split(" ");
 		
 		HashMap<String, Integer> hashMap = new HashMap<>();
@@ -33,6 +33,7 @@ public class HashMapMain {
 			hashMap.add(word, value);
 		}
 		System.out.println(hashMap);
+		
 	}
-
+	
 }

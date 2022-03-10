@@ -1,6 +1,7 @@
 package com.Day15;
 
 import java.util.ArrayList;
+
 /**
  *  We have created this class for the HashMap implementation  
  *  We have created the method get to find the value of a specific key
@@ -10,7 +11,6 @@ import java.util.ArrayList;
  * @param <K> - Here we have pass the Key
  * @param <V> - Here we pass the Value
  */
-
 public class HashMap<K, V> {
 
 	/**
@@ -19,7 +19,7 @@ public class HashMap<K, V> {
 	 */
 	private final int numberOfBucket;
 	ArrayList<LinkedList<K>> arrayList;
-	
+
 	public HashMap() {
 		/**
 		 * We have made the arrayList of size 10
@@ -32,7 +32,8 @@ public class HashMap<K, V> {
 			arrayList.add(null);
 		}
 	}
-	
+
+
 	public V get(K key) {
 		/**
 		 * We have created the method get to find the value of a specific key
@@ -54,13 +55,14 @@ public class HashMap<K, V> {
 		MyMapNode<K, V> mapNode = (MyMapNode<K, V>) linkedList.search(key);
 		return mapNode == null ? null : mapNode.getValue();
 	}
+
 	
 	private int getBucketNumber(K key) {
 		/**
-		 * [2] Method getBucketNumber to find the index of the arrayList
-		 * 1. First we get the hashcode of the key and save it into variable hashcode
-		 * 2.Then we mod the hashCode with the size of the arrayList 
-		 * 3. Then we get a number in the range of the arrayList
+		 * Method getBucketNumber to find the index of the arrayList
+		 * First we get the hashcode of the key and save it into variable hashcode
+		 * Then we mod the hashCode with the size of the arrayList 
+		 * Then we get a number in the range of the arrayList
 		 * @param key = Here the pass the key to find the index
 		 * @return - We return the index value
 		 */
@@ -68,6 +70,7 @@ public class HashMap<K, V> {
 		int hashCode = Math.abs(key.hashCode());
 		return hashCode % this.numberOfBucket;
 	}
+
 	
 	public void add(K key, V value) {
 		/**
@@ -96,6 +99,7 @@ public class HashMap<K, V> {
 		} else {
 			myMapNode.setValue(value);
 		}
+		
 	}
 	
 	@Override
