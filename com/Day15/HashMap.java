@@ -22,7 +22,7 @@ public class HashMap<K, V> {
 
 	public HashMap() {
 		/**
-		 * We have made the arrayList of size 10
+		 * 1. We have made the arrayList of size 10
 		 * Then we are creating a new ArrayList and adding the null vale to it
 		 */
 
@@ -31,7 +31,7 @@ public class HashMap<K, V> {
 		for (int i = 0; i < numberOfBucket; i++) {
 			arrayList.add(null);
 		}
-	}
+	}	
 
 
 	public V get(K key) {
@@ -99,8 +99,28 @@ public class HashMap<K, V> {
 		} else {
 			myMapNode.setValue(value);
 		}
-		
 	}
+	
+	public boolean remove(K key) {
+    	/**
+    	 * Method remove to delete the LinkList from array
+    	 * First we pass the key and find the index of the LinkedList
+    	 * Then we check the arrayList and use the search to check the Node in the LinkedList
+    	 * Then we remove the Node and arrayList
+    	 * @param key - we pass the key to remove the Mapnode
+    	 * @return - We return true once it is deleted
+    	 */
+		
+		int index = this.getBucketNumber(key);
+		LinkedList<K> linkedList = this.arrayList.get(index);
+
+		MyMapNode<K, V> myMapNode = (MyMapNode<K, V>) linkedList.search(key);
+
+		linkedList.remove(key);
+		arrayList.remove(index);
+		return true;	
+	}
+	
 	
 	@Override
 	public String toString() {

@@ -61,6 +61,4 @@ public class MyMapNode<K, V> implements Node<K> {
 		return myMapNodeString.toString();
 	}
     
-	
-	
 }
