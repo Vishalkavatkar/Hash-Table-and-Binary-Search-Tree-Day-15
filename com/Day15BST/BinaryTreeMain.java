@@ -34,6 +34,7 @@ public class BinaryTreeMain {
         ab.inorder();
         
         ab.size();
+        ab.search(63);
 		
 		
 	}
